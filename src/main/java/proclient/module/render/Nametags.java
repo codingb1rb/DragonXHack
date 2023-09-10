@@ -28,7 +28,7 @@ import proclient.settings.Setting;
 
 @SuppressWarnings("rawtypes")
 public class Nametags extends Module {
-    private final Setting Enchants = new Setting("Enchants", this, true);
+    private Setting Enchants = new Setting("Enchants", this, true);
     public Nametags() {
         super("Nametags", KeyboardConstants.KEY_NONE, Category.RENDER);
         addAll(Enchants);

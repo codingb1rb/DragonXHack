@@ -117,7 +117,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 	private ItemStack itemInUse;
 	private int itemInUseCount;
 	protected float speedOnGround = 0.1F;
-	protected float speedInAir = 0.02F;
+	public float speedInAir = 0.02F;
 	private int lastXPSound;
 	private final GameProfile gameProfile;
 	private boolean hasReducedDebug = false;

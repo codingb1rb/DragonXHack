@@ -52,6 +52,8 @@ import proclient.Dragon;
 import proclient.event.events.EventRender2D;
 import proclient.module.Module;
 import proclient.module.RenderModule;
+import proclient.util.notifications.NotifUtils;
+import proclient.util.notifications.Notification;
 
 /**+
  * This portion of EaglercraftX contains deobfuscated Minecraft 1.8 source code.
@@ -312,6 +314,7 @@ public class GuiIngame extends Gui {
 		}
 
 		//Dragon.arraylist.draw();
+		NotifUtils.renderNotifications();
 		for(Module m : Dragon.moduleManager.mods) {
 			if(m.isToggled() && m instanceof RenderModule) {
 				((RenderModule)m).draw();

@@ -129,4 +129,37 @@ public class GuiChest extends GuiContainer {
     	}
     
     }
+		public boolean isEmpty() {
+		for (int ii = 0; ii < this.inventoryRows * 9; ii++) {
+			Slot s = (Slot) inventorySlots.inventorySlots.get(ii);
+			if (s.getStack() == null) {
+				continue;
+			}
+			return false;
+		}
+		return true;
+	}
+	public void store() {
+		for (int ii = 0; ii < 4 * 9; ii++) {
+			Slot s = (Slot) inventorySlots.inventorySlots.get(ii + inventoryRows * 9);
+			if (s.getStack() == null) {
+				continue;
+			}
+			handleMouseClick(s, s.slotNumber, 0, 1);
+			handleMouseClick(s, s.slotNumber, 0, 6);
+		}
+	}
+	
+	public void steal() {
+		if(Dragon.moduleManager.chestStealer.chestStealDelay.getValDouble() == 0) {
+			for (int ii = 0; ii < this.inventoryRows * 9; ii++) {
+				Slot s = (Slot) this.inventorySlots.inventorySlots.get(ii);
+				if (s.getStack() == null) {
+					continue;
+				}
+				handleMouseClick(s, s.slotNumber, 0, 1);
+				handleMouseClick(s, s.slotNumber, 0, 6);
+			}
+		}
+	}
 }

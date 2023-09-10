@@ -3,6 +3,8 @@ package proclient.module;
 import proclient.Dragon;
 import proclient.event.Event;
 import proclient.settings.Setting;
+import proclient.util.notifications.NotifType;
+import proclient.util.notifications.NotifUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,8 +51,12 @@ public class Module {
         }
     }
 
-    public void onEnable() { }
-    public void onDisable() { }
+    public void onEnable() { 
+        NotifUtils.addNotification("Enabled", name, 2000, NotifType.INFO);
+    }
+    public void onDisable() { 
+        NotifUtils.addNotification("Disabled", name, 2000, NotifType.INFO);
+    }
     public void onUpdate() { }
     public void onRender() { }
 

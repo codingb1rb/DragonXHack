@@ -3,14 +3,13 @@ package proclient.module;
 import java.util.ArrayList;
 
 import proclient.module.movement.*;
-import proclient.module.player.*;
 import proclient.module.hud.*;
+import proclient.module.misc.ChestStealer;
 import proclient.Dragon;
 import proclient.command.CommandManager;
 import proclient.event.Event;
 import proclient.event.events.EventChat;
 import proclient.module.combat.*;
-import proclient.module.misc.*;
 import proclient.module.render.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ChatComponentText;
@@ -18,53 +17,13 @@ import net.minecraft.util.ChatComponentText;
 public class ModuleManager {
 
     public static ArrayList<Module> mods;
+    public ChestStealer chestStealer;
 
     public ModuleManager() {
         mods = new ArrayList<Module>();
-        //COMBAT
-        newMod(new Criticals());
-        newMod(new AutoClicker());
-        newMod(new ZenticAura());
         newMod(new KillAura());
-        newMod(new FastBow());
-        newMod(new AntiCobweb());
-        newMod(new AutoWtap());
-        newMod(new NoHurtCam());
-        newMod(new Aimbot());
-
-
-        //MOVEMENT
-        newMod(new AutoSprint());
-        newMod(new NoFall());
-        newMod(new Speed());
-        newMod(new Glide());
-        newMod(new StepHight());
-        newMod(new JetPack());
-        newMod(new Parkour());
-        newMod(new Spider());
-        newMod(new Dolphin());
-        newMod(new AutoWalk());
-        newMod(new Bhop());
-        newMod(new InvWalk());
-        newMod(new Scaffold());
         newMod(new SafeWalk());
-
-        //PLAYER
-        newMod(new AllowFly());
-        newMod(new GodMode());
-        newMod(new Phase());
-        newMod(new FastPlace());
-        newMod(new FreeCam());
-        newMod(new ShrekScript());
-
-        //RENDER
-        newMod(new Fullbright());
-        newMod(new Xray());
-        newMod(new StorageEsp());
-        newMod(new PlayerEsp());
-        newMod(new MobEsp());
         newMod(new ClickGui());
-        newMod(new ItemEsp());
         newMod(new Nametags());
         newMod(new ArmorStats());
         newMod(new Trails());
@@ -75,21 +34,13 @@ public class ModuleManager {
         newMod(new VapeOverlay());
         newMod(new Drag());
         newMod(new proclient.ui.ArrayList());
-        newMod(new Radar());
         newMod(new CPS());
         newMod(new PotionHUD());
         newMod(new Info());
         newMod(new ComboCounter());
-
-
-        //MISC
-        newMod(new SpeedMine());
-        newMod(new AutoRespawn());
-        newMod(new ServerCrasher());
-        newMod(new FastEat());
-        newMod(new Dupe());
-        newMod(new PingSpoofer());
-        newMod(new Timer());
+        newMod(new AutoClicker());
+        newMod(new ChestStealer());
+        newMod(new Velocity());
     }
 
     public static void newMod(Module m) {

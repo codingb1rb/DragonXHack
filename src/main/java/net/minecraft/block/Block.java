@@ -6,7 +6,6 @@ import net.lax1dude.eaglercraft.v1_8.EaglercraftRandom;
 import proclient.Dragon;
 import proclient.event.Event;
 import proclient.event.events.EventCollide;
-import proclient.module.render.Xray;
 
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -414,45 +413,6 @@ public class Block {
 	}
 
 	public boolean shouldSideBeRendered(IBlockAccess iblockaccess, BlockPos blockpos, EnumFacing enumfacing) {
-
-		if(this == Block.getBlockById(14)) //gold ore
-			return true;
-		if(this == Block.getBlockById(15)) //iron ore
-			return true;
-		if(this == Block.getBlockById(16)) //coal ore
-			return true;
-		if(this == Block.getBlockById(21)) //lapis ore
-			return true;
-		if(this == Block.getBlockById(56)) //diamond ore
-			return true;
-		if(this == Block.getBlockById(73)) //redstone ore
-			return true;
-		if(this == Block.getBlockById(74)) //redstone ore
-			return true;
-		if(this == Block.getBlockById(129)) //emerald ore
-			return true;
-		if(this == Block.getBlockById(153)) //quartz ore
-			return true;
-		if(this == Block.getBlockById(8)) //flowing water
-			return true;
-		if(this == Block.getBlockById(9)) //still water
-			return true;
-		if(this == Block.getBlockById(10)) //flowing lava
-			return true;
-		if(this == Block.getBlockById(11)) //still lava
-			return true;
-		if(this == Block.getBlockById(7)) //bedrock
-			return true;
-		if(this == Block.getBlockById(116)) //etable
-			return true;
-		if(this == Block.getBlockById(47)) //bookshelf
-			return true;
-		if(this == Block.getBlockById(52)) //spawner
-			return true;
-		if(this == Block.getBlockById(54)) //chest
-			return true;
-			if(Xray.enabled)
-			return false;
 		return enumfacing == EnumFacing.DOWN && this.minY > 0.0D ? true
 				: (enumfacing == EnumFacing.UP && this.maxY < 1.0D ? true
 						: (enumfacing == EnumFacing.NORTH && this.minZ > 0.0D ? true
