@@ -7,7 +7,7 @@ import net.lax1dude.eaglercraft.v1_8.internal.KeyboardConstants;
 import net.minecraft.client.Minecraft;
 import proclient.module.Category;
 import proclient.module.RenderModule;
-import proclient.util.FuncUtils;
+import proclient.util.shit.FuncUtils;
 
 public class CPS extends RenderModule {
     public CPS() {

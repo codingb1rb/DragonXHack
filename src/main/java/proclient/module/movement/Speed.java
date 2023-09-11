@@ -8,7 +8,7 @@ import net.minecraft.potion.Potion;
 
 public class Speed extends Module{
 	private Setting speed = new Setting("Speed", this, 3.0, 1.0, 3.0, false);
-	private Setting speedMode = new Setting("Mode", this, "vanilla", "NCP");
+	private Setting speedMode = new Setting("Mode", this, "vanilla");
     public Speed() {
 		super("Speed", KeyboardConstants.KEY_NONE, Category.MOVEMENT);
 		addAll(speed, speedMode);
@@ -25,18 +25,7 @@ public class Speed extends Module{
 				mc.thePlayer.motionX *= speed.getValDouble();
 				mc.thePlayer.motionZ *= speed.getValDouble();
 				}
-			} else if(speedMode.getMode().equals("NCP")) {
-                if (isMoving()) {
-                    if(mc.thePlayer.onGround) {
-                        mc.thePlayer.jump();
-                        mc.thePlayer.motionY -= 0.02f;
-                        mc.thePlayer.speedInAir = 0.021f;
-                        getNCPSpeedOnGround();
-                    }
-                    mc.thePlayer.motionY -= 0.0002D;
-                }
-			}
-			
+			} 
 		}
 		
 	}

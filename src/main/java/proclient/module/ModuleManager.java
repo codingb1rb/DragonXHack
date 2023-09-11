@@ -40,7 +40,8 @@ public class ModuleManager {
         newMod(new ComboCounter());
         newMod(new AutoClicker());
         newMod(new ChestStealer());
-        newMod(new Velocity());
+        newMod(new Speed());
+        newMod(new Fly());
     }
 
     public static void newMod(Module m) {

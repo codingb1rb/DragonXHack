@@ -247,8 +247,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 				I18n.format("menu.multiplayer", new Object[0])));
 		GuiButton btn;
 		this.buttonList.add(btn = new GuiButton(14, this.width / 2 - 100, parInt1 + parInt2 * 1,
-				I18n.format("menu.forkOnGitlab", new Object[0])));
-		btn.enabled = EaglercraftVersion.mainMenuEnableGithubButton;
+				I18n.format("Discord", new Object[0])));
 	}
 
 	/**+

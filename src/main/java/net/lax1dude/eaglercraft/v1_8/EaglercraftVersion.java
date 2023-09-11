@@ -11,7 +11,7 @@ public class EaglercraftVersion {
 	public static final String projectForkVersion = "u18";
 	public static final String projectForkVendor = "lax1dude";
 	
-	public static final String projectForkURL = "https://gitlab.com/lax1dude/eaglercraftx-1.8";
+	public static final String projectForkURL = "https://discord.gg/EcuPCpGpyS";
 	
 	//////////////////////////////////////////////////////////////////////
 	
@@ -25,7 +25,7 @@ public class EaglercraftVersion {
 	public static final String projectOriginRevision = "1.8";
 	public static final String projectOriginVersion = "u18";
 	
-	public static final String projectOriginURL = "https://gitlab.com/lax1dude/eaglercraftx-1.8";
+	public static final String projectOriginURL = "https://discord.gg/EcuPCpGpyS";
 	
 	
 	// Miscellaneous variables:

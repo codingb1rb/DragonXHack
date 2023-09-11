@@ -9,7 +9,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.MathHelper;
-import proclient.util.RenderUtils;
+import proclient.util.shit.RenderUtils;
 import proclient.util.Timer;
 
 
