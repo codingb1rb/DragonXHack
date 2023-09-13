@@ -37,11 +37,14 @@ public class ModuleManager {
         newMod(new CPS());
         newMod(new PotionHUD());
         newMod(new Info());
-        newMod(new ComboCounter());
         newMod(new AutoClicker());
         newMod(new ChestStealer());
         newMod(new Speed());
         newMod(new Fly());
+        newMod(new SafeWalk());
+        newMod(new AimAssist());
+        newMod(new Criticals());
+        newMod(new Wtap());
     }
 
     public static void newMod(Module m) {

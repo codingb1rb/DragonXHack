@@ -16,8 +16,12 @@ public class Fly extends Module{
 
     public void onUpdate() {
         if(this.isToggled()) {
+            this.setName("Fly | " + this.mode.getMode());
             if(this.mode.getMode().equals("Vanilla")) {
                 this.mc.thePlayer.capabilities.isFlying = true;
+                this.mc.thePlayer.motionZ *= speed.getValDouble();
+                this.mc.thePlayer.motionX *= speed.getValDouble();
+
             }
         }
     }

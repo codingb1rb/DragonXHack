@@ -25,7 +25,6 @@ public class ClickGui extends Module {
         mc.displayGuiScreen(Dragon.getClickgui());
     	super.onEnable();
         }
-
     public void onDisable() {
         super.onDisable();
         mc.displayGuiScreen((GuiScreen) null);

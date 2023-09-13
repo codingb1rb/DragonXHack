@@ -11,14 +11,18 @@ import proclient.Dragon;
 import proclient.module.Category;
 import proclient.module.Module;
 import proclient.module.RenderModule;
-import proclient.util.shit.RenderUtil;
+import proclient.util.shit.RenderUtils;
+
+
 
 public class ArrayList extends RenderModule {
-	public ArrayList() {
-		super("ArrayList", KeyboardConstants.KEY_NONE, Category.HUD, 0, 0, 0, 0);
-	}
 
-    public void draw(){
+	public ArrayList() {
+		super("ArrayList", KeyboardConstants.KEY_NONE, Category.RENDER,0,0,0,0);
+	}
+	
+	@Override
+	public void draw() {
         Dragon.moduleManager.mods.sort(Comparator.comparingInt(m -> Minecraft.getMinecraft().fontRendererObj.getStringWidth(((Module)m).name)).reversed());
 			List<Module> enabledMods = new java.util.ArrayList<Module>();
 			
@@ -31,15 +35,18 @@ public class ArrayList extends RenderModule {
 			int count = 0;
 			for(Module m : enabledMods) {
 				if(m.isToggled()) {
-					Gui.drawRect(GuiScreen.width-Minecraft.getMinecraft().fontRendererObj.getStringWidth(m.name)-6, count*12, GuiScreen.width, count*12+12, 0x70000000);
-					Minecraft.getMinecraft().fontRendererObj.drawString(m.name, GuiScreen.width-Minecraft.getMinecraft().fontRendererObj.getStringWidth(m.name)-2, count*12+12/2-Minecraft.getMinecraft().fontRendererObj.FONT_HEIGHT/2, RenderUtil.getRainbow(4, 0.8f, 0.85f));
-					Gui.drawRect(GuiScreen.width-Minecraft.getMinecraft().fontRendererObj.getStringWidth(m.name)-7+1/2, count*12, GuiScreen.width-Minecraft.getMinecraft().fontRendererObj.getStringWidth(m.name)-6, count*12+12, 0x99900000);
+					Gui.drawRect(GuiScreen.width-mc.fontRendererObj.getStringWidth(m.name)-6, count*12, GuiScreen.width, count*12+12, 0x70000000);
+					if(m.blatant)
+					mc.fontRendererObj.drawString("§6⚠§r", GuiScreen.width-mc.fontRendererObj.getStringWidth(m.name), count*12+12/2-mc.fontRendererObj.FONT_HEIGHT/2, -1);
+					RenderUtils.renderChromaString(m.blatant ? m.name.replace("§6⚠§r","") : m.name, GuiScreen.width-mc.fontRendererObj.getStringWidth(m.name)-2+(m.blatant?mc.fontRendererObj.getStringWidth("§6⚠§r"):0), count*12+12/2-mc.fontRendererObj.FONT_HEIGHT/2);
+					RenderUtils.drawChromaRectangle(GuiScreen.width-mc.fontRendererObj.getStringWidth(m.name)-7+1/2, count*12, GuiScreen.width-mc.fontRendererObj.getStringWidth(m.name)-6, count*12+12);
 					if(count+1 == enabledMods.size()) {
+						RenderUtils.drawChromaRectangle(GuiScreen.width-mc.fontRendererObj.getStringWidth(m.name)-7+1/2, count*12+12, GuiScreen.width, count*12+12+1);
 						break;
 					}
+					RenderUtils.drawChromaRectangle(GuiScreen.width-mc.fontRendererObj.getStringWidth(m.name)-7+1/2, count*12+12, GuiScreen.width-mc.fontRendererObj.getStringWidth(enabledMods.get(count+1).name)-6, count*12+12+1);
 					++count;
 				}
 			}
-    }
-    
-}
+		}
+	}

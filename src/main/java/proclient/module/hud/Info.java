@@ -9,6 +9,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import proclient.module.Category;
 import proclient.module.RenderModule;
+import proclient.util.shit.RenderUtils;
 
 public class Info extends RenderModule{
     public Info() {
@@ -26,7 +27,7 @@ public class Info extends RenderModule{
         public void draw() {
         int rot = MathHelper.floor_double(this.mc.thePlayer.rotationYaw * 4 / 360 + 0.5) & 3;
         if (mc.thePlayer != null) {
-            Gui.drawRect(this.x, this.y, this.x + this.getWidth(), this.y + this.getHeight(), 0x90000000);
+            RenderUtils.drawRoundedRect(this.x, this.y, this.x + this.getWidth(), this.y + this.getHeight(), 5, 0x90000000);
             Minecraft.getMinecraft().fontRendererObj.drawString(" X: " + getPositions()[0], this.x + 5, this.y + 14, -1);
             Minecraft.getMinecraft().fontRendererObj.drawString(" Y: " + getPositions()[1], this.x + 5, this.y + 24, -1);
             Minecraft.getMinecraft().fontRendererObj.drawString(" Z: " + getPositions()[2], this.x + 5, this.y + 34, -1);
