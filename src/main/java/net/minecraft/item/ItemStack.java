@@ -43,7 +43,7 @@ public final class ItemStack {
 	public int stackSize;
 	public int animationsToGo;
 	private Item item;
-	private NBTTagCompound stackTagCompound;
+	public NBTTagCompound stackTagCompound;
 	private int itemDamage;
 	private EntityItemFrame itemFrame;
 	private Block canDestroyCacheBlock;

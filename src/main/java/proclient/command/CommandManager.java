@@ -5,7 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import proclient.Dragon;
+import proclient.command.commands.Enchant;
 import proclient.command.commands.Help;
+import proclient.command.commands.Pages;
+import proclient.command.commands.Toggle;
 import proclient.command.commands.Vclip;
 import proclient.event.events.EventChat;
 
@@ -21,6 +24,9 @@ public class CommandManager {
     public void setup() {
         commands.add(new Vclip());
         commands.add(new Help());
+        commands.add(new Enchant());
+        commands.add(new Pages());
+        commands.add(new Toggle());
     }
 
     public static List<Command> getCommands() {

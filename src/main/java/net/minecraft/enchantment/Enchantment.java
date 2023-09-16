@@ -16,7 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 
 public abstract class Enchantment {
-	private static final Enchantment[] enchantmentsList = new Enchantment[256];
+	public static final Enchantment[] enchantmentsList = new Enchantment[256];
 	public static final Enchantment[] enchantmentsBookList;
 	private static final Map<ResourceLocation, Enchantment> locationEnchantments = Maps.newHashMap();
 	public static final Enchantment protection = new EnchantmentProtection(0, new ResourceLocation("protection"), 10,

@@ -25,8 +25,8 @@ public class SafeWalk extends Module {
     
     public void onUpdate() {
         if(this.isToggled()) {
+        this.setName("SafeWalk " + mode.getMode());
         if(mode.getMode().equals("Sneak")){
-            this.setName("SafeWalk | Sneak");
         if (Minecraft.getMinecraft().thePlayer != null && mc.theWorld != null) {
             final Minecraft mc2 = mc;
             final double posX = Minecraft.getMinecraft().thePlayer.posX;
@@ -47,7 +47,6 @@ public class SafeWalk extends Module {
     @Override
     public void onEvent(Event e) {
         if(mode.getMode().equals("NoSneak")) {
-            this.setName("SafeWalk | NoSneak");
             mc.gameSettings.keyBindSneak.pressed = false;
             if(e instanceof EventSafewalk && e.isPre())
             e.setCancelled(true);
