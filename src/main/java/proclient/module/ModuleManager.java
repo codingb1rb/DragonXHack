@@ -45,6 +45,7 @@ public class ModuleManager {
         newMod(new AimAssist());
         newMod(new Criticals());
         newMod(new Wtap());
+        newMod(new NoSlow());
     }
 
     public static void newMod(Module m) {
