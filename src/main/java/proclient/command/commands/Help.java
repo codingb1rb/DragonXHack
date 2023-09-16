@@ -11,15 +11,8 @@ public class Help extends Command {
 
 	@Override
 	public void onCommand(String[] args, String command) {
-		if (args.length == 0) {
-			Dragon.moduleManager.addChatMessage("---DragonX Commands---");
-            Dragon.moduleManager.addChatMessage(".help - shows this");
-            Dragon.moduleManager.addChatMessage(".vclip <distance> - vclips you through blocks");
-            Dragon.moduleManager.addChatMessage("----------------------");
-			return;
+			for(Command c : Dragon.cmdManager.getCommands()) {
+				Dragon.moduleManager.addChatMessage("§a" + c.getSyntax() + " §7- " + c.getDescription());
+			}
 		}
 	}
-
-    
-    
-}
