@@ -678,10 +678,10 @@ public class EntityPlayerSP extends AbstractClientPlayer {
 		float f = 0.8F;
 		boolean flag2 = this.movementInput.moveForward >= f;
 		this.movementInput.updatePlayerMoveState();
-		if (this.isUsingItem() && !this.isRiding()) {
-			this.movementInput.moveStrafe *= 0.2F;
-			this.movementInput.moveForward *= 0.2F;
-			this.sprintToggleTimer = 0;
+		if (this.isUsingItem() && !this.isRiding() && Dragon.moduleManager.noslow.isToggled()) {
+				this.movementInput.moveStrafe *= 0.2F;
+				this.movementInput.moveForward *= 0.2F;
+				this.sprintToggleTimer = 0;
 		}
 
 		this.pushOutOfBlocks(this.posX - (double) this.width * 0.35D, this.getEntityBoundingBox().minY + 0.5D,

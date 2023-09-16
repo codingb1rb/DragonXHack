@@ -18,6 +18,7 @@ public class ModuleManager {
 
     public static ArrayList<Module> mods;
     public ChestStealer chestStealer;
+    public NoSlow noslow;
 
     public ModuleManager() {
         mods = new ArrayList<Module>();
@@ -45,6 +46,7 @@ public class ModuleManager {
         newMod(new AimAssist());
         newMod(new Criticals());
         newMod(new Wtap());
+        newMod(new Velocity());
         newMod(new NoSlow());
     }
 
