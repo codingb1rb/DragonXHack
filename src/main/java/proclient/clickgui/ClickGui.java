@@ -14,7 +14,7 @@ import proclient.module.Category;
 public class ClickGui extends GuiScreen {
 
 	public static ArrayList<Frame> frames;
-	public static int color = -1;
+	public static int color = -3;
 	
 	public ClickGui() {
 		this.frames = new ArrayList<Frame>();

@@ -47,7 +47,7 @@ public class ModuleManager {
         newMod(new Criticals());
         newMod(new Wtap());
         newMod(new Velocity());
-        newMod(new NoSlow());
+        newMod(new Jetpack());
     }
 
     public static void newMod(Module m) {
